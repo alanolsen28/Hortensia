@@ -7,13 +7,13 @@ function ItemListContainer() {
   return (
     <div className='carrito'>
     <div>
-    <Items title="Producto1" />          
+    <Items title="RAMO CHICO" text="COMPRAR"/>          
     </div>
     <div>
-    <Items title="Producto2" />          
+    <Items title="RAMO MEDIANO" text="COMPRAR"/>          
     </div>
     <div>
-    <Items title="Producto3" />          
+    <Items title="RAMO GRANDE" text="COMPRAR" />          
     </div>
     </div>
   )
