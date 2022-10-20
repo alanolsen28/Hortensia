@@ -3,8 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Cartwidget from './Cartwidget';
+import Cartwidget from './Cartwidget/Cartwidget';
 
 
 function NavBar() {
@@ -27,9 +26,7 @@ function NavBar() {
               aria-label="Search"
               placeholder="Buscar"
             />
-          <Button variant="outline-success">
-          <img src={Cartwidget}/>
-          </Button>git commit - m
+          <Cartwidget/>
           </Form>
         </Navbar.Collapse>
       </Container>
@@ -37,5 +34,5 @@ function NavBar() {
     </Container>
   );
 }
-
 export default NavBar;
+
