@@ -9,12 +9,12 @@ function App() {
   let title = "Bienvendios";
 
   return (
-    <div className='App'>
-      <header ClassName="App-header">
+    <div className='App containter'>
+      <header ClassName="App-header containter">
          <NavBar />
       </header>
-    <div className=''>
-    <ItemListContainer />
+    <div className='containter'>
+    <ItemListContainer className='containter' />
     </div>
     </div>
   );
