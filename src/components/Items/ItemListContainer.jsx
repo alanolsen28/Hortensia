@@ -5,9 +5,9 @@ import "./carrito.css";
 
 function ItemListContainer() {
   return (
-    <div className='carrito'>
+    <div className='items'>
     <div>
-    <Items title="RAMO CHICO" text="COMPRAR"/>          
+    <Items title="RAMO CHICO" text="COMPRAR"/>     
     </div>
     <div>
     <Items title="RAMO MEDIANO" text="COMPRAR"/>          

@@ -1,8 +1,10 @@
-.carrito {
+.items {
     padding: 30px;
     margin-top: 50px;
     display: flex;
+    
 }
+
 
 .buttonComprar {
     background-color: rgb(110, 32, 32);
@@ -26,3 +28,4 @@
   .container {
     padding: 2px 16px;
   }
+
