@@ -1,19 +1,32 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Items from "./Items"
 import "./carrito.css";
+import getProductsFromAPI from '../../mockService/mockService';
 
 
 function ItemListContainer() {
+   const [productsList, setProductsList] = useState([]);
+
+   useEffect(() => {
+      getProductsFromAPI().then ((itemsDB)=>{
+         setProductsList(itemsDB);
+        });
+    }, []);
+
   return (
-    <div className='items'>
-    <div>
-    <Items title="RAMO CHICO" text="COMPRAR"/>     
-    </div>
-    <div>
-    <Items title="RAMO MEDIANO" text="COMPRAR"/>          
-    </div>
-    <div>
-    <Items title="RAMO GRANDE" text="COMPRAR" />          
+    <div className='container p-3'>
+    <div className='row'>
+      {
+        productsList.map( (p) => (
+          <Items
+           title={p.title}
+           price={p.price}
+           id={p.id}
+           description={p.description}
+           stock={p.stock}
+          />
+        ))
+      }
     </div>
     </div>
   )

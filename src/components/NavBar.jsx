@@ -8,8 +8,8 @@ import Cartwidget from './Cartwidget/Cartwidget';
 
 function NavBar() {
   return (
-    <Container fluid>
-    <Navbar bg="light" expand="lg" fixed="top">
+
+    <Navbar bg="light" expand="lg" fixed="top" navbar-expand-lg >
       <Container>
         <Navbar.Brand href="#home">Hortensia</Navbar.Brand>  
          <img src='./img/logo.jpg' width='50'/>
@@ -31,7 +31,6 @@ function NavBar() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    </Container>
   );
 }
 export default NavBar;

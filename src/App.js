@@ -2,19 +2,19 @@ import './App.css';
 import NavBar from './components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/Items/ItemListContainer';
-import ClickCounter from './components/ClickCounter/Clickcounter';
+import "./home.css";
 
 
 function App() {
   let title = "Bienvendios";
 
   return (
-    <div className='App containter'>
-      <header ClassName="App-header containter">
-         <NavBar />
+    <div className='container-fluid backGround'>
+      <header className='row'>
+         <NavBar/>
       </header>
-    <div className='containter'>
-    <ItemListContainer className='containter' />
+    <div  className='container-fluid p-5'>
+         <ItemListContainer />
     </div>
     </div>
   );
