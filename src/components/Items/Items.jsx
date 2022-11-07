@@ -1,19 +1,23 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ClickCounter from '../ClickCounter/Clickcounter';
+import "../carrito.css";
+import { Link } from 'react-router-dom';
 
 function Items(props) {
+
+  let urlDetail = `/detalle/${props.id}`
+
   return (
-    <Card className='card m-3 p-1 text-center' style={{ width: '18rem'}}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <Card className='card m-3 p-1 text-center colorCrema' style={{ width: '14rem'}}>
+      <Card.Img variant="top" src={props.img}/>
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <p>${props.price}</p>
-        <ClickCounter stock={10}/>
-      </Card.Body>
+        <Link to={urlDetail} className="btn btn-outline-dark buttonComprar">DETALLE</Link>
+      </Card.Body>      
     </Card>
   );
 }
 
 export default Items;
+

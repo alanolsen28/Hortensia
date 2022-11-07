@@ -29,3 +29,19 @@
     padding: 2px 16px;
   }
 
+.colorCrema {
+
+background-color: rgb(255, 249, 243);
+
+}
+
+.title {
+  color: #ffffff; ; font-family: 'Signika', sans-serif; font-size: 54px; font-weight: 300; line-height: 58px; margin: 0 0 58px;
+}
+
+.nav-link {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
