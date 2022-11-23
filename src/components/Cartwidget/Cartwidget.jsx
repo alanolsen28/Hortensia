@@ -1,14 +1,28 @@
-import React from 'react'
+import React, { useContext } from "react";
 import "./Cartwidget.css";
+import cartContext from '../../storage/CartContext';
+import { Link } from 'react-router-dom';
 
-function Cartwidget(props) {
+function Cartwidget() {
+
+  const { totalitemsInCart } = useContext(cartContext);
+
   return (
-    <button className='buttonCart'>       
-    <img src='./img/cart.webp' alt="Cart" width="40" height="40" className='imgCart'/>
-    </button>
+    <div className="d-flex">
+    <div className='buttonCart m-1'>   
+    <Link to="/cart/">     
+    <img src='/img/cart.webp' alt="Cart" width="40" height="40" className='imgCart'/>
+    </Link>
+     </div>
+    { 
+      (totalitemsInCart() > 0)? totalitemsInCart()
+    :
+         <></>      
+    }
+    </div>
   )
 }
 
-export default Cartwidget
 
-console.log(Cartwidget);
+ 
+export default Cartwidget

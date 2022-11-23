@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import Items from "../Items/Items"
 import "../carrito.css";
+
 import getProductsFromAPI, {
   getProductFromAPIByCategory} 
   from '../../mockService/mockService';
+  
 import {useParams} from "react-router-dom";
+
 
 
 function ItemListContainer() {
@@ -21,11 +24,14 @@ function ItemListContainer() {
         setProductsList(itemsDB);
     });
      }
+
       }, [categoryid]);
 
 
+
   return (
-    <div className='container'>
+    <div>
+    <div className='container' >
     <div className='row justify-content-center'>
     <p className='text-center title pt-5'>PRODUCTOS</p>
       {
@@ -41,6 +47,7 @@ function ItemListContainer() {
           />
         ))
       }
+    </div>
     </div>
     </div>
   )

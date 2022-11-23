@@ -1,31 +1,24 @@
 import React, { useState } from 'react';
-// import  getProductsFromAPI  from '../../mockService/mockService';
 import "../carrito.css";
 
-function ClickCounter({stock}) {
-    const [cantidad, setCantidad] = useState(0);
+function ClickCounter({stock , onAddToCart}) {
+    const [cantidad, setCantidad] = useState(1);
 
-    // useEffect(() => {
-    //     getProductsFromAPI().then ((itemsDB)=>{
-    //         setCantidad(itemsDB);
-    //       });
-    //   }, []);
+ function onAdd(event) {
+    if (cantidad < stock) setCantidad (cantidad + 1);    
+ }
 
-    function handleIncrement() {
-        if ( cantidad < stock)
-        setCantidad(cantidad +1);        
-    }
-
-    function handleDecrement () {
-        if ( cantidad > 0)
-        setCantidad(cantidad -1);        
+function handleDecrement (event) {
+        if (cantidad > 0)  setCantidad(cantidad -1); 
+               
     }
 
     return (
         <div className='m-2 p-1'>
-            <button onClick={handleIncrement} className="btn btn-outline-dark m-2">+</button>
-            <button onClick={handleDecrement} className="btn btn-outline-dark m-2">-</button>
-            <p>Cantidad {cantidad}</p>
+            <button onClick={onAdd} className="btn btn-outline-dark m-2 p-3">+</button>
+            <button onClick={handleDecrement} className="btn btn-outline-dark m-2 p-3">-</button>
+            <p>{cantidad}</p>
+            <button onClick={()=> onAddToCart(cantidad)} className="btn btn-outline-dark buttonComprar mb-1 ">AGREGAR AL CARRITO</button>
         </div>
     )
 }

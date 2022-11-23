@@ -1,34 +1,35 @@
 const itemsDB = [ {
 
     id : 1,
-    title : "Rosa",
+    title : "Flor Rosa",
     description : "flor de color rosa",
     price: 1000,
-    stock: 50,
+    stock: 10,
     category: "flores",
-    img: "./img/rosa.jpg"
+    img: "/img/rosa.jpg",
+    discount: 50,
 
 },
 {
 
     id : 2,
-    title : "Plumeria",
+    title : "Flor Plumeria",
     description : "flor de color rosa",
     price: 2000,
-    stock: 50,
+    stock: 5,
     category: "flores",
-    img: "./img/plumeria.jpg",
+    img: "/img/plumeria.jpg",
 
 },
 {
 
     id : 3,
     title : "Ramo Seco",
-    description : "./imagenes/sexo.jpg",
+    description : "/imagenes/sexo.jpg",
     price: 3000,
-    stock: 50,
+    stock: 20,
     category: "ramos",
-    img: "./img/seco.jpg",
+    img: "/img/seco.jpg",
 
 },
 {
@@ -37,20 +38,20 @@ const itemsDB = [ {
     title : "Ramo Repollo",
     description : "flor de color rosa",
     price: 3000,
-    stock: 50,
+    stock: 8,
     category: "ramos",
-    img: "./img/verdu.jpg",
+    img: "/img/verdu.jpg",
 
 },
 {
 
     id : 6,
-    title : "Amarilla",
+    title : "Flor Amarilla",
     description : "flor de color amarilla",
     price: 2000,
-    stock: 50,
+    stock: 9,
     category: "flores",
-    img: "./img/amarilla.jpg",
+    img: "/img/amarilla.jpg",
 
 },
 {
@@ -61,40 +62,40 @@ const itemsDB = [ {
     price: 2000,
     stock: 50,
     category: "ramos",
-    img: "./img/ramo1.jpg",
+    img: "/img/ramo1.jpg",
 
 },
 {
 
     id : 8,
-    title : "Rosa",
+    title : "Flor Rosa",
     description : "flor de color rosa",
     price: 1000,
-    stock: 50,
+    stock: 2,
     category: "flores",
-    img: "./img/rosa.jpg"
+    img: "/img/rosa.jpg"
 
 },
 {
 
     id : 9,
-    title : "Plumeria",
+    title : "Flor Plumeria",
     description : "flor de color rosa",
     price: 2000,
     stock: 50,
     category: "flores",
-    img: "./img/plumeria.jpg",
+    img: "/img/plumeria.jpg",
 
 },
 {
 
     id : 10,
     title : "Ramo Seco",
-    description : "./imagenes/sexo.jpg",
+    description : "/imagenes/sexo.jpg",
     price: 3000,
-    stock: 50,
+    stock: 40,
     category: "ramos",
-    img: "./img/seco.jpg",
+    img: "/img/seco.jpg",
 
 },
 {
@@ -103,25 +104,23 @@ const itemsDB = [ {
     title : "Ramo Repollo",
     description : "flor de color rosa",
     price: 3000,
-    stock: 50,
+    stock: 5,
     category: "ramos",
-    img: "./img/verdu.jpg",
+    img: "/img/verdu.jpg",
 
 },
 ];
-
 
 export default function getProductsFromAPI() {
 
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(itemsDB);
-        }, 0);
+        }, 100);
     });
 }
   
-
-export  function getProductFromAPI(idParams) {
+export function getProductFromAPI(idParams) {
 
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -131,11 +130,10 @@ export  function getProductFromAPI(idParams) {
                 );
 
             resolve(ItemRequested);
-        }, 10);
+        }, 1000);
     });
 }
   
-
 export function getProductFromAPIByCategory(cartegoryid) {
 
     return new Promise((resolve) => {
@@ -150,3 +148,4 @@ export function getProductFromAPIByCategory(cartegoryid) {
         }, 100);
     })
 }
+

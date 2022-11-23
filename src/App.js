@@ -5,11 +5,17 @@ import ItemListContainer from './components/ItemList/ItemListContainer';
 import "./home.css";
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {CartContextPorvider} from './storage/CartContext';
+import CartView from './components/CartView/CartView';
+import { getProductsFromAPI } from './Services/firebase';
+
 
 function App() {
 
+  getProductsFromAPI()
   return (
   <div className='backGround'>
+  <CartContextPorvider>
   <BrowserRouter>     
             <NavBar/>
         <Routes>
@@ -30,9 +36,13 @@ function App() {
         <Route 
         path='*' 
         element={<h1>404: Ruta no encontrada</h1>} />
+
+        <Route 
+        path='/cart/' element={ <CartView/> } />
         
          </Routes>
   </BrowserRouter>
+  </CartContextPorvider>
   </div>
   );
 }

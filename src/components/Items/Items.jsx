@@ -9,7 +9,7 @@ function Items(props) {
 
   return (
     <Card className='card m-3 p-1 text-center colorCrema' style={{ width: '14rem'}}>
-      <Card.Img variant="top" src={props.img}/>
+      <Card.Img variant="top rounded"  src={props.img}/>
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <p>${props.price}</p>
