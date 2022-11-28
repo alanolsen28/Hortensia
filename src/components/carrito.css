@@ -49,3 +49,7 @@ background-color: rgb(248, 245, 242);
   font-size: larger;
 
 }
+
+.title2 {
+  color:rgb(240, 224, 208); font-family: 'Signika', sans-serif; font-size: 34px; font-weight: 300; line-height: 58px; margin: 0 0 58px;
+}

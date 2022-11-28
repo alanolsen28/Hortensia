@@ -2,15 +2,12 @@ import React, {useState, useEffect} from 'react'
 import Items from "../Items/Items"
 import "../carrito.css";
 
-import getProductsFromAPI, {
-  getProductFromAPIByCategory} 
-  from '../../mockService/mockService';
-  
 import {useParams} from "react-router-dom";
+import { getProductsFromAPI, getProductFromAPIByCategory} from '../../Services/firebase';
 
 
 
-function ItemListContainer() {
+function ItemListContainer() { 
    const [productsList, setProductsList] = useState([]);
    const { categoryid } = useParams();
 

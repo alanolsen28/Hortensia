@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import "../carrito.css";
-import { getProductFromAPI } from  '../../mockService/mockService';
 import Card from 'react-bootstrap/Card';
 import ClickCounter from '../ClickCounter/Clickcounter';
 import { useParams } from 'react-router-dom';
@@ -9,6 +8,7 @@ import Swal from 'sweetalert2'
 import cartContext from '../../storage/CartContext';
 import { useContext } from 'react';
 import Loader from '../Loader/Loader';
+import { getProductFromAPI } from '../../Services/firebase';
 
 
 

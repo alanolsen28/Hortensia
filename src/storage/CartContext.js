@@ -24,30 +24,43 @@ function addToCart(itemData) {
         const newCart = [...cart];
         newCart.push(itemData)
         setCart(newCart)
+
     }
+
+    return itemFound
+}
+
+function clear () {
+    let newCart = [] 
+    setCart(newCart);
+
+    return newCart
+
 }
 
 function totalitemsInCart() { 
+    let totalitemsInCart = [];
+    cart.forEach((itemsInCart)  => {
+        totalitemsInCart = itemsInCart.cantidad
+         });
+    return totalitemsInCart 
 }
 
 function totalpriceInCart() { 
     let totalprice = 0;
     cart.forEach((itemsInCart)  => {
-        totalprice = (itemsInCart.cantidad * itemsInCart.price) + totalprice
+        totalprice = itemsInCart.cantidad * itemsInCart.price + totalprice
          });
     return totalprice 
 }
 
-// function deleteitemsInCart (itemID) {
-//  let newCartDelete = cart.filter((itemsDB)  => itemsDB.id !== cart.id)
-//     return newCartDelete 
-// }
+
 
 const value = {
     cart,
     totalitemsInCart,
     addToCart ,
-    // deleteitemsInCart,
+    clear,
     totalpriceInCart,
 };
 
