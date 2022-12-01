@@ -17,6 +17,7 @@ function CartView() {
 
 
    function createBuyOrder(userData) {
+
     const buyData = {
       buyer: userData,
       items: cart,

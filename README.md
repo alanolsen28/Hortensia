@@ -1,3 +1,19 @@
+## _HORTENSIA_
+Flores para tu hogar
+
+Floreria Hortensia
+- Arreglos florales y plantas -
+Entregas CABA y zona oeste
+
+built with:
+
+.JAVASCRITP
+.HTML
+.CSS
+.REACT.JS
+
+AND LOVE ♡♡♡♡
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

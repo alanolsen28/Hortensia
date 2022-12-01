@@ -5,7 +5,7 @@ import "../carrito.css";
 
 export function Footer() {
   return (
-    <div className='container-xxxl colorCrema'>
+    <div className='fluid colorCrema'>
     <div className='row'>
     <Card className="text-center">
       <Card.Body>
