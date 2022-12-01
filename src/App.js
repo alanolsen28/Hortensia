@@ -5,19 +5,14 @@ import ItemListContainer from './components/ItemList/ItemListContainer';
 import "./home.css";
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {CartContextPorvider} from './storage/CartContext';
+import {CartContextPorvider} from './Storage/CartContext';
 import CartView from './components/CartView/CartView';
-import { getProductsFromAPI, getProductFromAPI, getProductFromAPIByCategory } from './Services/firebase';
 import { CheckOut } from './components/CheckOut/CheckOut';
-
-
+import { Footer }  from './components/Footer/Footer';
 
 
 function App() {
 
-  getProductsFromAPI()
-  getProductFromAPI()
-  getProductFromAPIByCategory()
   return (
   <div className='backGround'>
   <CartContextPorvider>
@@ -51,6 +46,8 @@ function App() {
          
   </BrowserRouter>
   </CartContextPorvider>
+  <Footer>    
+  </Footer>
   </div>
   );
 }

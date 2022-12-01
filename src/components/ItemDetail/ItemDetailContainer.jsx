@@ -5,7 +5,7 @@ import ClickCounter from '../ClickCounter/Clickcounter';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
-import cartContext from '../../storage/CartContext';
+import cartContext from '../../Storage/CartContext';
 import { useContext } from 'react';
 import Loader from '../Loader/Loader';
 import { getProductFromAPI } from '../../Services/firebase';
@@ -24,8 +24,8 @@ function ItemDetailContainer() {
 
    useEffect(() => {
       getProductFromAPI(id)
-      .then ((itemsDB) => {
-        setProduct(itemsDB);
+      .then ((itemsdb) => {
+        setProduct(itemsdb);
         })
       .catch ((error) => {
           console.error(error);
@@ -40,7 +40,7 @@ function ItemDetailContainer() {
 
   const itemForCart =  {
     ...product, 
-    cantidad
+    cantidad,
   }
         
   addToCart(itemForCart);
@@ -74,8 +74,7 @@ return ( <>
         ) : ( <div>
           <Link to="/cart/">     
               <button className='btn btn-outline-dark buttonComprar m-2'>Ir al Carrito</button>
-           </Link>   
-              <button className='btn btn-outline-dark buttonComprar m-2'>Borrar del Carrito</button>
+           </Link> 
            <Link to='/' className='btn btn-outline-dark buttonComprar m-2'>Seguir Comprando</Link> 
               </div>) }
       </Card.Body>

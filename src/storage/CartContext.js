@@ -31,10 +31,7 @@ function addToCart(itemData) {
 }
 
 function clear () {
-    let newCart = [] 
-    setCart(newCart);
-
-    return newCart
+    setCart([]);
 
 }
 
@@ -54,7 +51,29 @@ function totalpriceInCart() {
     return totalprice 
 }
 
+function deleteToCart(itemData) {
+    let itemFound = cart.find ( item => item.id === itemData.id)
 
+    if (itemFound){
+        let newCart = cart.map ( itemsInCart => {
+            if (itemsInCart.id === itemData.id)
+            { itemsInCart.cantidad -= itemData.cantidad;
+                return itemsInCart;
+            }
+            else {
+                return itemsInCart
+            }
+        })
+       setCart(newCart)
+    } else  {       
+        const newCart = [...cart];
+        newCart.shift(itemData)
+        setCart(newCart)
+
+    }
+
+    return itemFound
+}
 
 const value = {
     cart,
@@ -62,6 +81,7 @@ const value = {
     addToCart ,
     clear,
     totalpriceInCart,
+    deleteToCart,
 };
 
     return (

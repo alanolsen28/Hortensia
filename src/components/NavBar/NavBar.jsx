@@ -9,13 +9,12 @@ import { Link } from 'react-router-dom';
 
 let logo = '/img/logo.jpg'
 
-function NavBar() {
-
+function NavBar(p) {
   return (
     <Navbar className='colorCrema' expand="lg">
       <Container>
            <Link to='/'><p className='navlink'>Hortensia</p></Link>  
-         <img src={logo} width='50' className='m-3'/>
+        <img src={logo} width='50' className='m-3'/>
         <Navbar.Toggle aria-controls="basic-navbr-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

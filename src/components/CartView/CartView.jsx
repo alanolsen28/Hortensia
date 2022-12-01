@@ -1,27 +1,24 @@
-import React from "react"
-import { useContext } from "react"
+import React , { useContext  } from "react"
 import { creatBuyOrderFire } from "../../Services/firebase"
-import cartContext from "../../storage/CartContext"
+import cartContext from "../../Storage/CartContext"
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
 import { CheckOut } from "../CheckOut/CheckOut";
+import { BuyUserForm } from "../Form/Form";
 
 
 function CartView() {
-   const { cart, totalpriceInCart, clear } = useContext(cartContext)
+   const { cart, totalpriceInCart, clear, deleteToCart} = useContext(cartContext)
    const navigate = useNavigate()
 
-   if(cart.length === 0 ) return <p className='text-center title pt-5'>CART VACIO</p>
+   if(cart.length === 0 ) return <p className='text-center title pt-5'>CARRITO VACIO</p>
 
-   function creatBuyOrder() {
+
+   function createBuyOrder(userData) {
     const buyData = {
-      buyer: {
-        name: "User 1",
-        phone: "1165282794",
-        email: "alan.olseen@hotmail.com"
-      },
+      buyer: userData,
       items: cart,
       total: totalpriceInCart(),
       date: new Date(),
@@ -35,11 +32,12 @@ function CartView() {
       }
     );
 
-    
    }
+
+
     
     return ( <div>
-              <p className=' '>CART</p>
+              <p className='title text-center mt-5'>CART</p>
               <div className='container'>
               <div className='d-flex justify-content-center text-center'> 
           </div>
@@ -53,17 +51,19 @@ function CartView() {
         <Card.Title>{cartItem.title}</Card.Title>
         <p>${cartItem.price}</p>
         <Card.Title>{cartItem.cantidad} Unidades</Card.Title>
-        {/* <Button onClick={()=>removeItem(cartItem.id)} variant="danger m-2">X</Button> */}
-        <Button onClick={clear} variant="danger m-2">Vaciar Carrito</Button>
+        <Button onClick={deleteToCart} variant="danger m-2">Borrar del Carrito</Button>
       </Card.Body>
     </Card>
     </div>
     </div>
         ))}
         <div className="container">
-        <div className='justify-content-center text-center'>
-        <p className='text-center title2 p-1 mt-3'>TOTAL A PAGAR ${totalpriceInCart()}</p>
-        <Button onClick={creatBuyOrder} variant="success m-2 mb-5" >FINALIZAR COMPRAR</Button>
+        <div className='justify-content-center text-center row'>
+        <Button onClick={clear} variant="danger mt-5 mb-3">VACIAR CARRITO</Button>        
+        <p className='text-center title2'>TOTAL A PAGAR ${totalpriceInCart()}</p>
+           
+        <BuyUserForm onSubmit={createBuyOrder}/>
+
         </div>
         </div>
         </div>

@@ -13,12 +13,12 @@ function ItemListContainer() {
 
    useEffect(() => {
     if (categoryid) {
-      getProductFromAPIByCategory(categoryid).then((itemsDB) => {
-        setProductsList(itemsDB);
+      getProductFromAPIByCategory(categoryid).then((itemsdb) => {
+        setProductsList(itemsdb);
       });
     } else {
-      getProductsFromAPI().then ((itemsDB)=>{
-        setProductsList(itemsDB);
+      getProductsFromAPI().then ((itemsdb)=>{
+        setProductsList(itemsdb);
     });
      }
 
@@ -33,14 +33,14 @@ function ItemListContainer() {
     <p className='text-center title pt-5'>PRODUCTOS</p>
       {
         productsList.map( (p) => (
-          <Items
-           img={p.img}
-           title={p.title}
-           price={p.price}
-           id={p.id}
-           description={p.description}
-           stock={p.stock}
-           categoryid={p.categoryid}
+          <Items            key={p.id}
+                            img={p.img}
+                            title={p.title}
+                            price={p.price}
+                            id={p.id}
+                            description={p.description}
+                            stock={p.stock}
+                            categoryid={p.categoryid}
           />
         ))
       }

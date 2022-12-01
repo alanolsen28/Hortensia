@@ -5,7 +5,6 @@
     
 }
 
-
 .buttonComprar {
     background-color: #5c1c1c;
     border: none;
@@ -18,18 +17,12 @@
     padding: 30px;
     background-color: rgb(240, 224, 208);
     
-    
   }
-  
 
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
-
-  .container {
-    padding: 2px 16px;
-  }
 
 .colorCrema {
 
@@ -38,7 +31,7 @@ background-color: rgb(248, 245, 242);
 }
 
 .title {
-  color:rgb(240, 224, 208); font-family: 'Signika', sans-serif; font-size: 54px; font-weight: 300; line-height: 58px; margin: 0 0 58px;
+  color:rgb(240, 224, 208); font-family: 'Signika', sans-serif; font-size: 54px; font-weight: 300; line-height: 58px;
 }
 
 .navlink {
@@ -51,5 +44,5 @@ background-color: rgb(248, 245, 242);
 }
 
 .title2 {
-  color:rgb(240, 224, 208); font-family: 'Signika', sans-serif; font-size: 34px; font-weight: 300; line-height: 58px; margin: 0 0 58px;
+  color:rgb(240, 224, 208); font-family: 'Signika', sans-serif; font-size: 34px; font-weight: 300; line-height: 58px;
 }
