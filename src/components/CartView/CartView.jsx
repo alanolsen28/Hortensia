@@ -32,7 +32,6 @@ function CartView() {
         Swal.fire((`Realizaste Tu Compra`),);
       }
     );
-
    }
 
 
