@@ -61,9 +61,8 @@ return ( <>
     <Loader></Loader>
     </div>
     </div> ) : (
-  <div className='container'>
-   <div className='row m-5 d-flex justify-content-center'>
-   <div className='col-xs-1 center-block' style={{ width: '20rem'}}>
+  <div className='container mt-5 mb-5'>
+   <div className='row justify-content-center'>
     <Card className='card p-1 text-center colorCrema' style={{ width: '20rem'}}>
       <Card.Img variant="top rounded"  src={product.img}/>
       <Card.Body>
@@ -79,7 +78,6 @@ return ( <>
               </div>) }
       </Card.Body>
     </Card>
-    </div>
     </div>
     </div>
  ) };

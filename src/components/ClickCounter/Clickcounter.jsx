@@ -14,7 +14,7 @@ function handleDecrement (event) {
     }
 
     return (
-        <div className='m-2 p-1'>
+        <div>
             <button onClick={onAdd} className="btn btn-outline-dark m-2 p-3">+</button>
             <button onClick={handleDecrement} className="btn btn-outline-dark m-2 p-3">-</button>
             <p>{cantidad}</p>
